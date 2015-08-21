@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>_TextBoxMixin/_AutoCompleterMixin test</title>
+
+	<style type="text/css">
+		@import "../../themes/claro/document.css";
+		@import "../../themes/dijit.css";
+		@import "../../themes/claro/claro.css";
+		
+		#table {
+			margin: 0;
+			padding: 2px;
+		}
+		#table .layout {
+			padding: 2px;
+			font-size: 100%;
+			margin: 0;
+		}
+	</style>
+
+	<script type="text/javascript" src="../../../dojo/dojo.js"
+		data-dojo-config="parseOnLoad: true, isDebug: true"></script>
+
+	<script type="text/javascript">
+		dojo.require("dijit.dijit"); // optimize: load dijit layer
+		dojo.require("dijit.form.DataList");
+		dojo.require("dijit.form.ComboBox");		
+	</script>
+</head>
+<body class="claro" role="main">
+	<h1 class="testTitle">_TextBoxMixin/_AutoCompleterMixin test</h1>
+	<datalist id="states">
+	<select data-dojo-type="dijit/form/DataList" data-dojo-props='id:"states"' >
+	</select>
+	</datalist>
+	<table id="table">
+		<tr>
+			<td class="layout">Events</td>
+			<td class="layout"><input id="dijit_events" aria-label="dijit_events" 
+				data-dojo-type="dijit/form/ComboBox" 
+				data-dojo-props='value:"", list:"states", onInput:function(){ console.log("onInput"); return true; }'/></td>
+		</tr>
+		
+	</table>
+</body>
+</html>
