@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" 
+		content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>test</title>
+
+	<style type="text/css">
+		@import "../../themes/claro/document.css";
+		@import "../../themes/dijit.css";
+		@import "../../themes/claro/claro.css";
+		
+		#table {
+			margin: 0;
+			padding: 2px;
+		}
+		#table .layout {
+			padding: 2px;
+			font-size: 100%;
+			margin: 0;
+		}
+	</style>
+
+	<script type="text/javascript" src="../../../dojo/dojo.js"
+		data-dojo-config="parseOnLoad: true, isDebug: true"></script>
+
+	<script type="text/javascript">
+		require([
+			"dojo/_base/declare",
+			"dojo/_base/lang",
+			"dojo/_base/window",
+			"dijit/form/_SearchMixin",
+			"dijit/_WidgetBase",
+			"dijit/form/_FormValueMixin",
+			"dijit/form/_TextBoxMixin",
+			"dojo/dom-class",
+			"dojo/keys",
+			"dojo/touch",
+			"dojo/on"
+		], function(declare, lang, win, SearchMixin, WidgetBase, FormValueMixin, TextBoxMixin, 
+			domClass, keys, touch, on){
+	
+		declare("SearchBox", [WidgetBase, FormValueMixin, TextBoxMixin, SearchMixin], {
+		
+		type: "search",
+				
+		buildRendering: function(){
+			this.inherited(arguments);
+			this.textbox = this.focusNode = this.domNode;
+		}
+		});
+	});
+	</script>
+</head>
+<body class="claro" role="main">
+	<h1 class="testTitle">Test</h1>
+	<table id="table">
+		<tr>
+			<td class="layout">Events</td>
+			<td class="layout"><input id="dijit_events" aria-label="dijit_events" 
+				data-dojo-type="SearchBox"/></td>
+		</tr>
+		
+	</table>
+</body>
+</html>
